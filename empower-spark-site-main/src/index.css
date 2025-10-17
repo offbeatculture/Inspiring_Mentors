@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Inspiring Mentors Brand Colors - Dark & Energetic Theme */
+    --background: 214 60% 8%;
+    --foreground: 220 13% 91%;
+
+    --card: 214 50% 12%;
+    --card-foreground: 220 13% 91%;
+
+    --popover: 214 55% 10%;
+    --popover-foreground: 220 13% 91%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 13% 91%;
+
+    --secondary: 215 16% 65%;
+    --secondary-foreground: 214 60% 8%;
+
+    --muted: 215 20% 25%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 220 13% 91%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 220 13% 91%;
+
+    --highlight: 48 96% 53%;
+    --highlight-foreground: 214 60% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 13% 91%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 20%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(214 60% 8%), hsl(199 89% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(199 89% 48%), hsl(142 71% 45%));
+    --gradient-overlay: linear-gradient(180deg, hsla(214 60% 8% / 0) 0%, hsla(214 60% 8% / 0.9) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(199 89% 48% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsla(0 0% 0% / 0.5);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Swiper Custom Styles */
+.events-swiper .swiper-button-next,
+.events-swiper .swiper-button-prev {
+  color: hsl(var(--primary));
+  background: hsl(var(--foreground) / 0.1);
+  backdrop-filter: blur(8px);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.events-swiper .swiper-button-next:hover,
+.events-swiper .swiper-button-prev:hover {
+  background: hsl(var(--foreground) / 0.2);
+  transform: scale(1.1);
+}
+
+.events-swiper .swiper-button-next::after,
+.events-swiper .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.events-swiper .swiper-pagination-bullet {
+  background: hsl(var(--foreground) / 0.5);
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.events-swiper .swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+  width: 30px;
+  border-radius: 5px;
+}

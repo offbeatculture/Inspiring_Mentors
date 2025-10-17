@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Inspiring Mentors Brand Colors - Black & Gold Theme */
+    --background: 0 0% 0%;               /* Pure black background */
+    --foreground: 48 96% 53%;            /* Gold text #EBBB2F */
+
+    --card: 0 0% 6%;                     /* Slightly lifted black cards */
+    --card-foreground: 48 96% 53%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 48 96% 53%;
+
+    --primary: 48 96% 53%;               /* Brand gold */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 48 40% 70%;             /* Muted gold/bronze accent */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 48 96% 53%;
+
+    --accent: 48 96% 53%;
+    --accent-foreground: 0 0% 0%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 0%;
+
+    --highlight: 48 96% 53%;
+    --highlight-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 48 96% 53%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 48 96% 53%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%), hsl(48 96% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(48 96% 53%), hsl(48 96% 35%));
+    --gradient-overlay: linear-gradient(
+      180deg,
+      hsla(0 0% 0% / 0) 0%,
+      hsla(0 0% 0% / 0.9) 100%
+    );
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(48 96% 53% / 0.25);
+    --shadow-card: 0 10px 30px -10px hsla(0 0% 0% / 0.5);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Swiper Custom Styles */
+.events-swiper .swiper-button-next,
+.events-swiper .swiper-button-prev {
+  color: hsl(var(--primary));
+  background: hsl(var(--foreground) / 0.1);
+  backdrop-filter: blur(8px);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.events-swiper .swiper-button-next:hover,
+.events-swiper .swiper-button-prev:hover {
+  background: hsl(var(--foreground) / 0.2);
+  transform: scale(1.1);
+}
+
+.events-swiper .swiper-button-next::after,
+.events-swiper .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.events-swiper .swiper-pagination-bullet {
+  background: hsl(var(--foreground) / 0.5);
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.events-swiper .swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+  width: 30px;
+  border-radius: 5px;
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
